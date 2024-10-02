@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B16F2D90-5389-49FC-9EC3-B750F980C4EB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{DF7E21F5-73BB-44CA-BC84-06E93936FBDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jobee.AuditTrail.Contracts", "src\Jobee.AuditTrail.Contracts\Jobee.AuditTrail.Contracts.csproj", "{23F72DDF-70FD-4618-9EC9-643020517533}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jobee.AuditTrail.Functions", "src\Jobee.AuditTrail.Functions\Jobee.AuditTrail.Functions.csproj", "{387DB86F-37CC-4651-AF8C-982C33A524C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jobee.AuditTrail.Domain", "src\Jobee.AuditTrail.Domain\Jobee.AuditTrail.Domain.csproj", "{0E769F35-6EFF-4550-9374-923CE62C921E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{23F72DDF-70FD-4618-9EC9-643020517533} = {B16F2D90-5389-49FC-9EC3-B750F980C4EB}
+		{387DB86F-37CC-4651-AF8C-982C33A524C8} = {B16F2D90-5389-49FC-9EC3-B750F980C4EB}
+		{0E769F35-6EFF-4550-9374-923CE62C921E} = {B16F2D90-5389-49FC-9EC3-B750F980C4EB}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23F72DDF-70FD-4618-9EC9-643020517533}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23F72DDF-70FD-4618-9EC9-643020517533}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23F72DDF-70FD-4618-9EC9-643020517533}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23F72DDF-70FD-4618-9EC9-643020517533}.Release|Any CPU.Build.0 = Release|Any CPU
+		{387DB86F-37CC-4651-AF8C-982C33A524C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{387DB86F-37CC-4651-AF8C-982C33A524C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{387DB86F-37CC-4651-AF8C-982C33A524C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{387DB86F-37CC-4651-AF8C-982C33A524C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E769F35-6EFF-4550-9374-923CE62C921E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E769F35-6EFF-4550-9374-923CE62C921E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E769F35-6EFF-4550-9374-923CE62C921E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E769F35-6EFF-4550-9374-923CE62C921E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

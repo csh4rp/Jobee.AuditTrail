@@ -1,0 +1,11 @@
+/home/kambie/Projects/dotnet/Jobee.AuditTrail/src/Jobee.AuditTrail.Domain/bin/Debug/net8.0/Jobee.AuditTrail.Domain.deps.json
+/home/kambie/Projects/dotnet/Jobee.AuditTrail/src/Jobee.AuditTrail.Domain/bin/Debug/net8.0/Jobee.AuditTrail.Domain.dll
+/home/kambie/Projects/dotnet/Jobee.AuditTrail/src/Jobee.AuditTrail.Domain/bin/Debug/net8.0/Jobee.AuditTrail.Domain.pdb
+/home/kambie/Projects/dotnet/Jobee.AuditTrail/src/Jobee.AuditTrail.Domain/obj/Debug/net8.0/Jobee.AuditTrail.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/kambie/Projects/dotnet/Jobee.AuditTrail/src/Jobee.AuditTrail.Domain/obj/Debug/net8.0/Jobee.AuditTrail.Domain.AssemblyInfoInputs.cache
+/home/kambie/Projects/dotnet/Jobee.AuditTrail/src/Jobee.AuditTrail.Domain/obj/Debug/net8.0/Jobee.AuditTrail.Domain.AssemblyInfo.cs
+/home/kambie/Projects/dotnet/Jobee.AuditTrail/src/Jobee.AuditTrail.Domain/obj/Debug/net8.0/Jobee.AuditTrail.Domain.csproj.CoreCompileInputs.cache
+/home/kambie/Projects/dotnet/Jobee.AuditTrail/src/Jobee.AuditTrail.Domain/obj/Debug/net8.0/Jobee.AuditTrail.Domain.dll
+/home/kambie/Projects/dotnet/Jobee.AuditTrail/src/Jobee.AuditTrail.Domain/obj/Debug/net8.0/refint/Jobee.AuditTrail.Domain.dll
+/home/kambie/Projects/dotnet/Jobee.AuditTrail/src/Jobee.AuditTrail.Domain/obj/Debug/net8.0/Jobee.AuditTrail.Domain.pdb
+/home/kambie/Projects/dotnet/Jobee.AuditTrail/src/Jobee.AuditTrail.Domain/obj/Debug/net8.0/ref/Jobee.AuditTrail.Domain.dll
