@@ -1,8 +1,6 @@
-using System.Diagnostics;
-using System.Text.Json;
 using Azure.Messaging.EventHubs;
-using Jobee.AuditTrail.Contracts.AuditLogs;
-using Jobee.AuditTrail.Domain.AuditLogs;
+using Jobee.AuditTrail.Functions.Consumers;
+using MassTransit;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
 
@@ -10,39 +8,34 @@ namespace Jobee.AuditTrail.Functions.Functions;
 
 public class AuditLogMessageFunction
 {
+    private const string HubName = "audit-logs";
+    
     private readonly ILogger<AuditLogMessageFunction> _logger;
+    private readonly IEventReceiver _eventReceiver;
 
-    public AuditLogMessageFunction(ILogger<AuditLogMessageFunction> logger) => _logger = logger;
-
-    [Function(nameof(AuditLogMessageFunction))]
-    [CosmosDBOutput("AuditTrail", "audit-logs")]
-    public object? Run([EventHubTrigger("audit-logs", Connection = "")] EventData[] events)
+    public AuditLogMessageFunction(ILogger<AuditLogMessageFunction> logger, IEventReceiver eventReceiver)
     {
-        var auditLogs = new List<AuditLog>(events.Length);
-        
+        _logger = logger;
+        _eventReceiver = eventReceiver;
+    }
+
+    [Function("AuditLogEventHubMessageFunction")]
+    public async Task RunEventHubAsync([EventHubTrigger(HubName, Connection = "")] EventData[] events,
+        FunctionContext context)
+    {
         foreach (var eventData in events)
         {
-            var @event = JsonSerializer.Deserialize<AuditLogIntegrationEvent>(eventData.BodyAsStream);
-            
-            Debug.Assert(@event is not null);
-
-            var auditLog = new AuditLog
-            {
-                Id = Guid.NewGuid().ToString(),
-                PartitionKey = @event.Source,
-                Source = @event.Source,
-                Timestamp = @event.Timestamp,
-                Actor = @event.Actor,
-                ObjectName = @event.ObjectName,
-                ObjectType = @event.ObjectType,
-                ObjectStatus = Enum.Parse<ObjectStatus>(@event.ObjectStatus.ToString()),
-                MetaData = @event.MetaData,
-                Changes = @event.Changes.Select(c => new ObjectChange(c.FieldName, c.OldValue, c.NewValue)).ToArray()
-            };
-
-            auditLogs.Add(auditLog);
+            await _eventReceiver.HandleConsumer<AuditLogConsumer>(HubName, eventData, context.CancellationToken);
         }
-        
-        return auditLogs.Count != 0 ? auditLogs : null;
+    }
+    
+    [Function("AuditLogKafkaMessageFunction")]
+    public async Task RunKafkaAsync([KafkaTrigger("", HubName)] EventData[] events,
+        FunctionContext context)
+    {
+        foreach (var eventData in events)
+        {
+            await _eventReceiver.HandleConsumer<AuditLogConsumer>(HubName, eventData, context.CancellationToken);
+        }
     }
 }
